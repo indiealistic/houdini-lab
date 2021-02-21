@@ -1,9 +1,10 @@
 import copy from 'rollup-plugin-copy'
+import css from 'rollup-plugin-css-only'
 
 export default {
   input: [
     'app/index.js',
-    'app/paint-board/bezier-curves.js'
+    'app/paint-board/quadratic-curve.js'
   ],
   output: {
     dir: 'dist',
@@ -14,6 +15,7 @@ export default {
       targets: [
         { src: 'index.html', dest: 'dist' }
       ]
-    })
+    }),
+    css({ output: 'index.css' })
   ]
 }
